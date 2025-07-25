@@ -5,6 +5,20 @@ import lombok.ToString;
 
 @ToString
 public class BankAccount {
+     /**
+      * The default pin code when non has been set.
+      */
+     private static char[] DEFAULT_PIN_CODE = {'0', '1', '2', '3'};
+
+     /**
+      * The required size of a pin code (number of characters)
+      */
+     @ToString.Exclude
+     private int PIN_CODE_SIZE = 4;
+
+     /**
+      * The account holder name.
+      */
      protected String holderName;
 
      @Getter
@@ -16,13 +30,15 @@ public class BankAccount {
      @Getter
      private double balance;
 
-     private char[] code = {'A', 'B', 'C', '4', '2', '1'};
+     private char[] pinCode = new char[PIN_CODE_SIZE];
 
-     public BankAccount(String holderName, char curency, short age, double balance) {
+
+     public BankAccount(String holderName, char currency, short age, double balance) {
           this.holderName = holderName;
           this.currency = currency;
           this.age = age;
           this.balance = balance;
+          setPinCode(DEFAULT_PIN_CODE);
      }
 
      /**
@@ -45,14 +61,39 @@ public class BankAccount {
           balance *= 2;
      }
 
+     /**
+      * This method should be called on birthday to increment the age
+      */
      void birthday() {
           age += 1;
      }
 
-     protected void displayCode() {
-          for(int index = 0;  index < code.length;  index++) {
-               System.out.print( code[index]);
+     /**
+      * Set a new pin code
+      *
+      * @param newPinCode an array of characters
+      * @return false if newPinCode has not the required size. In this case the pinCode stays unchanged.
+      */
+     protected boolean setPinCode(char[] newPinCode) {
+          // Ensure the pin code has the required size
+          if(newPinCode.length != PIN_CODE_SIZE) {
+               return false;
           }
-          System.out.println();
+
+          pinCode = java.util.Arrays.copyOf(newPinCode, newPinCode.length);
+          return true;
+     }
+     /**
+      * @return the default pin code as a String
+      */
+     String getPinCode() {
+          // This is a convoluted example
+          // whose goal is to practice how to handle a char array
+          StringBuilder pinCodeBuilder = new StringBuilder();
+
+          for(int index = 0;  index < pinCode.length;  index++) {
+               pinCodeBuilder.append(pinCode[index]);
+          }
+          return pinCodeBuilder.toString();
      }
 }

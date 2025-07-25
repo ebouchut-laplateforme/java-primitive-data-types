@@ -19,6 +19,9 @@ public class Main {
 
         System.out.println(account);
 
-        account.displayCode();
+        System.out.println("pinCode: " + account.getPinCode());
+        System.out.println("Changing pinCode");
+        account.setPinCode(new char[] {'A', 'B', 'C', 'D'});
+        System.out.println("pinCode: " + account.getPinCode());
     }
 }
