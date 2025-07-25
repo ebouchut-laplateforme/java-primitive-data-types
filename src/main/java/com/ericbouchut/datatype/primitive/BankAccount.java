@@ -1,10 +1,7 @@
 package com.ericbouchut.datatype.primitive;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
-
-import java.sql.SQLOutput;
 
 @ToString
 public class BankAccount {
