@@ -43,16 +43,16 @@ flowchart TD
     non_numbers --> boolean
 ```
 
-| Type      | Size    | Range/Values                                                                        | Default Value      | Class Equivalent |
-| --------- | ------- |-------------------------------------------------------------------------------------| ------------------ | ---------------- |
-| `boolean` | N/A     | `false` or `true`                                                                   | `false`            | `Boolean`        |
-| `char`    | 16 bits | `['\u0000', '\uFFFF']`<br><br>`[0, 65535]`                                          | all 0 binary value | `Char`           |
-| `byte`    | 8 bits  |                                                                                     | `0`                | `Byte`           |
-| `short`   | 16 bits | `[2^16, 2^16 - 1]`<br><br>`[65536, -65535]`                                         | `0`                | `Short`          |
-| `ìnt`     | 32 bits | `[-2^31, +2^31 - 1]`<br><br>`[-2_147_483_648, -2_147_483_647]`                      | `0`                | `Integer`        |
-| `long`    | 64 bits | `[2^63, 2^63 - 1]`<br><br>`[-9_223_372_036_854_775_808, 9_223_372_036_854_775_807]` | `0L`               | `Long`           |
-| `float`   | 32 bits | TODO ;-)                                                                            | `0F`               | `Float`          |
-| `double`  | 64 bits | TODO ;-)                                                                            | `0D`               | `Double`         |
+| Type      | Size    | Range/Values                                                                         | Default Value      | Class Equivalent |
+| --------- | ------- |--------------------------------------------------------------------------------------| ------------------ | ---------------- |
+| `boolean` | N/A     | `false` or `true`                                                                    | `false`            | `Boolean`        |
+| `char`    | 16 bits | `['\u0000', '\uFFFF']`<br><br>`[0, 65535]`                                           | all 0 binary value | `Char`           |
+| `byte`    | 8 bits  | TODO                                                                                 | `0`                | `Byte`           |
+| `short`   | 16 bits | `[-2^16, 2^16 - 1]`<br><br>`[-65536, 65535]`                                         | `0`                | `Short`          |
+| `ìnt`     | 32 bits | `[-2^31, +2^31 - 1]`<br><br>`[-2_147_483_648, 2_147_483_647]`                        | `0`                | `Integer`        |
+| `long`    | 64 bits | `[-2^63, 2^63 - 1]`<br><br>`[-9_223_372_036_854_775_808, 9_223_372_036_854_775_807]` | `0L`               | `Long`           |
+| `float`   | 32 bits | TODO ;-)                                                                             | `0F`               | `Float`          |
+| `double`  | 64 bits | TODO ;-)                                                                             | `0D`               | `Double`         |
 
 ## Lab
 
